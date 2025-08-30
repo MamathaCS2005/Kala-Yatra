@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Join Us - Kala Yatra</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url(Goa.jpg);
+      width: 100%;
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    html{
+    overflow-x: hidden;
+     scroll-padding-top: 6rem;
+     scroll-behavior: smooth;
+}
+
+    .join-section {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 40px;
+      background-color: #fef9c3;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .join-section h2 {
+      color: #b45309;
+      margin-bottom: 20px;
+    }
+
+    .join-section p {
+      font-size: 16px;
+      margin-bottom: 25px;
+      color: #444;
+    }
+
+    .join-section input, .join-section select {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .join-section button {
+      padding: 12px 24px;
+      background-color: #f59e0b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .join-section button:hover {
+      background-color: #d97706;
+    }
+
+    .success-message {
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="join-section" id="join">
+    <h2>Join Us at Kala Yatra</h2>
+    <p>Become a part of our cultural journey! Register to support, explore or promote Indian handicrafts and traditions.</p>
+
+    <input type="text" id="name" placeholder="Your Full Name" required><br>
+    <input type="email" id="email" placeholder="Your Email ID" required><br>
+    <select id="interest">
+      <option value="">Select Your Interest</option>
+      <option value="artisan">I am an Artisan</option>
+      <option value="traveler">I am a Traveler</option>
+      <option value="supporter">I want to Support</option>
+    </select><br>
+
+    <button onclick="submitForm()">Join Now</button>
+    <div class="success-message" id="message"></div>
+  </div>
+
+  <script>
+    function submitForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const interest = document.getElementById("interest").value;
+
+      if (name && email && interest) {
+        document.getElementById("message").textContent = "Thank you for joining Kala Yatra, " + name + "!";
+        document.getElementById("message").style.color = "green";
+
+        // Reset fields
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("interest").value = "";
+      } else {
+        document.getElementById("message").textContent = "Please fill out all the fields.";
+        document.getElementById("message").style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
